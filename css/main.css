@@ -13,6 +13,7 @@
 
 html {
   color: #222;
+  font-family:'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
   line-height: 1.4;
 }
@@ -81,6 +82,12 @@ fieldset {
 
 textarea {
   resize: vertical;
+}
+h1 {
+  color: #000;
+}
+.heading {
+  text-align: center;
 }
 
 /* ==========================================================================
