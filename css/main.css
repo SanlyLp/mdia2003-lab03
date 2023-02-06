@@ -121,9 +121,14 @@ header{
 .row{
   display: grid;
   row-gap: 1rem;
+  margin: 0 1rem 3rem 1rem;
+}
+.row-no-margin{
+  margin-bottom: 0;
 }
 
-column{
+.column{
+  position: relative;
  /* background-color:rgb(255, 255, 255);
   margin: 1rem*/
 }
@@ -141,6 +146,8 @@ column{
 }
 .logo{
   max-height: 2.5rem ;
+  position: absolute;
+  bottom: 0;
 }
 
 /* page slider*/
@@ -154,23 +161,28 @@ column{
   max-height: 2.5rem;
   max-width: 7.5rem;
   position:absolute;
- 
-
 }
+
 /* main nav mobile first*/
 .main-nav{
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 .main-nav__item {
   display: block;
+  position: relative;
+  width: 100%;
+  padding: 1rem 1rem 1rem 100%;
   font-size: 1.3rem;
   text-decoration: none;
   text-align: left;
-  color: black;
+  color: white;
   line-height: 4rem;
   background-repeat: no-repeat;
+  background-position-x: 44%;
+  background-position-y: center;
+  background-size: 3.1rem, 1.7rem;
 }
 .main-nav__item::after {
   content: ">";
@@ -188,6 +200,7 @@ column{
 
 
 /* Small only-> mobile cellphone */
+/* the logo size in height should be same with the menu in mobile version*/
 @media screen and (max-width: 39.9375em) {
 .logo{
   max-height: 3rem;
@@ -196,17 +209,20 @@ column{
 .s-hide{
   display: none;
 }
+.s-show{
+  display: flex;
+}
 .mobile-nav{
-  background-image: url(../img/hamburger.svg);
-  background-repeat: no-repeat;
-  background-size: 1.8rem;
-  background-position: center center;
   position: absolute;
   right: 1rem;
   top: 0rem;
   z-index: 0rem;
   font-size: 0rem;
   padding: 1.5rem;
+  background-image: url(../img/hamburger.svg);
+  background-repeat: no-repeat;
+  background-size: 1.8rem;
+  background-position: center center;
 }
 .main-nav__item::after {
   display: inline-block;
@@ -223,10 +239,14 @@ column{
   .row {
     width: 85vw;
     max-width: 70rem;
-    margin: 0 auto;
     column-gap: 1.5rem;
     row-gap: 1.5rem;
     margin: 0 auto 3rem auto;
+  }
+  .sub-grid{
+    display: grid;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
   }
   .m-col-2{
     grid-template-columns: 1fr 1fr;
@@ -244,7 +264,7 @@ column{
   .m-1-2{
     grid-template-columns: 1fr 2fr;
   }
-  .row.span{
+  .row-span{
     grid-column-start:1;
     grid-column-end: -1;
   }
@@ -273,6 +293,10 @@ column{
 @media screen and (min-width: 40em) and (max-width: 63.9375em){
   .m-hide{
     display: none;
+  }
+  .special-project{
+    grid-column-start: 1;
+    grid-column-end: -1;
   }
 }
 
@@ -304,19 +328,36 @@ column{
 /* ==========================================================================
    MODULES
    ========================================================================== */
-  .page__slider{
+  .page--slider{
     background-color: rgb(230, 230, 230);
   }
-  .page--slider img{
-    height: 25vh;
+
+  .project{
+    position: relative;
+    margin: 0;
+  }
+  .project__caption{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(128, 128, 128);
   }
 
 /* ==========================================================================
 THEME
    ========================================================================== */
-.page__footer{
+.page--footer{
   background-color: #222;
+
 }
+.page--footer .row{
+  background-image: url(../img/colors.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  padding-bottom: 2rem;
+}
+
 .inverted{
   color: white;
 }
@@ -329,18 +370,27 @@ THEME
   display: none !important;
 }
 .main-nav__item:nth-child(1){
-
+  background-color: #25c389;
+  background-image: url(..//img/icons/circle.svg), url(..//img/icons/home.svg)
 }
 .main-nav__item:nth-child(2){
+  background-color: #ffb901;
+  background-image:url(..//img/icons/circle.svg), url(..//img/icons/pages.svg)
   
 }
 .main-nav__item:nth-child(3){
+  background-color: #de6262;
+  background-image:url(..//img/icons/circle.svg), url(..//img/icons/bullhorn.svg)
   
 }
 .main-nav__item:nth-child(4){
+  background-color: #1691bd;
+  background-image:url(..//img/icons/circle.svg), url(..//img/icons/portfolio.svg)
   
 }
 .main-nav__item:nth-child(5){
+  background-color: #166ba2;
+  background-image:url(..//img/icons/circle.svg), url(..//img/icons/mail.svg)
   
 }
 
