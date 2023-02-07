@@ -193,7 +193,9 @@ header{
 .main-nav__item.active::after {
   content:"";
 }
-
+.main-nav{
+ width: 15vh;
+}
 
 
 /* basewidth for row, how the largest version goes at size and margins*/
